@@ -1,0 +1,91 @@
+import { Inter, Geist_Mono } from "next/font/google";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import ScrollProgress from "../../components/ScrollProgress";
+import "../globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
+  style: ['normal', 'italic'],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata = {
+  metadataBase: new URL("https://demadigital.asia"),
+  title: "DEMA DIGITAL ASIA | Enterprise Deep Tech",
+  description: "Asia's Premier End-to-End Digital Transformation & Deep Tech Partner. Building the architecture of tomorrow through AI, IoT, & Zero Trust Frameworks.",
+  keywords: ["B2B", "Enterprise AI", "Deep Tech", "Data Sovereignty", "Digital Transformation", "Next.js"],
+  openGraph: {
+    title: "DEMA DIGITAL ASIA",
+    description: "The neural orchestrator of Asia's digital economy.",
+    url: "https://demadigital.asia",
+    siteName: "DEMA",
+    images: [
+      {
+        url: "/bg_main_1776588187527.png", 
+        width: 1200,
+        height: 630,
+        alt: "DEMA Digital Asia Satellite Orbit Component",
+      },
+    ],
+    locale: "id_ID",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DEMA DIGITAL ASIA",
+    description: "Asia's Preeminent Deep Tech Orchestrator.",
+    images: ["/bg_main_1776588187527.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
+};
+
+export default async function RootLayout({ children, params }) {
+  const resolvedParams = await params;
+  const lang = resolvedParams?.lang || 'id';
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Corporation',
+    name: 'DEMA DIGITAL ASIA',
+    url: 'https://demadigital.asia',
+    logo: 'https://demadigital.asia/bg_main_1776588187527.png',
+    description: "Asia's Premier End-to-End Digital Transformation & Deep Tech Partner.",
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'ID'
+    },
+    industry: 'Information Technology',
+    sameAs: [
+      'https://linkedin.com/company/demadigital'
+    ]
+  };
+
+  return (
+    <html lang={lang} className={`${inter.variable} ${geistMono.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className={`${inter.className} relative overflow-x-hidden bg-[#000] text-white font-sans selection:bg-white selection:text-black`}>
+        <ScrollProgress />
+        <Navbar />
+        <main className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
