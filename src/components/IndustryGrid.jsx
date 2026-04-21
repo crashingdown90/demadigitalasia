@@ -1,4 +1,5 @@
 "use client";
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { industryVerticals } from '../data/content';
 import { LayoutGrid, Activity, Shield, Clock } from 'lucide-react';
@@ -13,6 +14,8 @@ export default function IndustryGrid() {
   const t = dictionary[lang]?.industryGrid || dictionary.en.industryGrid;
   const m = dictionary[lang]?.industryMetrics || dictionary.en.industryMetrics;
   
+  const [showAllMobile, setShowAllMobile] = useState(false);
+
   return (
     <section id="sector-solutions" className="bg-black pt-48 pb-32 px-6 md:px-24 border-y border-zinc-900 text-white min-h-screen relative overflow-hidden font-sans">
       
@@ -57,7 +60,7 @@ export default function IndustryGrid() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="relative h-full"
+              className={`relative h-full ${!showAllMobile && i >= 3 ? 'hidden sm:block' : ''}`}
             >
               <Link href={`/${lang}/sector-solutions/${v.id}`} className="block h-full">
                 <SpotlightCard className="h-full bg-zinc-950 border border-zinc-900 rounded-none overflow-hidden relative group transition-all duration-300 hover:border-zinc-500 cursor-pointer">
@@ -107,6 +110,18 @@ export default function IndustryGrid() {
             </motion.div>
           ))}
         </div>
+
+        {!showAllMobile && (
+          <div className="mt-8 flex justify-center sm:hidden">
+            <button 
+              onClick={() => setShowAllMobile(true)}
+              className="text-xs uppercase font-bold tracking-widest text-zinc-400 border border-zinc-800 px-8 py-4 hover:text-white hover:border-zinc-500 transition-colors w-full"
+            >
+              View More...
+            </button>
+          </div>
+        )}
+
       </div>
     </section>
   );

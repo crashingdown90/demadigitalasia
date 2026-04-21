@@ -23,27 +23,27 @@ export default function Footer() {
     { 
       title: t.col2, 
       links: [
-        { label: t.c2_1, url: `/${lang}/neural-network` },
-        { label: t.c2_2, url: `/${lang}/neural-network` },
-        { label: t.c2_3, url: `/${lang}/neural-network` },
-        { label: t.c2_4, url: `/${lang}/sector-solutions` }
+        { label: t.c2_1, url: `/${lang}/neural-network/ai` },
+        { label: t.c2_2, url: `/${lang}/neural-network/cloud` },
+        { label: t.c2_3, url: `/${lang}/neural-network/security` },
+        { label: t.c2_4, url: `/${lang}/neural-network/big-data` }
       ] 
     },
     { 
       title: t.col3, 
       links: [
-        { label: t.c3_1, url: `/${lang}/intelligence-hub` },
-        { label: t.c3_2, url: `/${lang}/intelligence-hub` },
-        { label: t.c3_3, url: `/${lang}/intelligence-hub` },
-        { label: t.c3_4, url: `/${lang}/help-center` }
+        { label: t.c3_1, url: `/${lang}/sector-solutions/finance` },
+        { label: t.c3_2, url: `/${lang}/sector-solutions/health` },
+        { label: t.c3_3, url: `/${lang}/sector-solutions/defense` },
+        { label: t.c3_4, url: `/${lang}/sector-solutions/gov` }
       ] 
     },
     { 
       title: t.col4, 
       links: [
-        { label: 'LinkedIn', url: 'https://linkedin.com', external: true },
-        { label: 'Twitter / X', url: 'https://x.com', external: true },
-        { label: 'GitHub', url: 'https://github.com', external: true }
+        { label: 'Intelligence Hub', url: `/${lang}/intelligence-hub` },
+        { label: 'Insights & Blog', url: `/${lang}/blog` },
+        { label: 'LinkedIn', url: 'https://linkedin.com/company/demadigital', external: true }
       ] 
     }
   ];

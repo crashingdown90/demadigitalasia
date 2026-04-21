@@ -44,9 +44,9 @@ export const dictionary = {
     },
     footer: {
       desc: "Building the future through digital innovation and connectivity. Your trusted IT partner in Asia for empowering enterprise digital transformation.",
-      col1: "Company", c1_1: "About Us", c1_2: "Leadership", c1_3: "Careers", c1_4: "Contact Us",
-      col2: "Solutions", c2_1: "Enterprise AI", c2_2: "Cloud Services", c2_3: "Cybersecurity", c2_4: "Industry Sectors",
-      col3: "Resources", c3_1: "Case Studies", c3_2: "Whitepapers", c3_3: "API Docs", c3_4: "Help Center",
+      col1: "The Core", c1_1: "Identity & Purpose", c1_2: "Leadership Board", c1_3: "Careers", c1_4: "Initiate Handshake",
+      col2: "Neural Network", c2_1: "Enterprise AI", c2_2: "Cloud & Devops", c2_3: "Cybersecurity", c2_4: "Big Data & BI",
+      col3: "Sector Solutions", c3_1: "Financial & Banking", c3_2: "Healthcare & Medical", c3_3: "Defense & Military", c3_4: "Government & Civil",
       col4: "Connect",
       region: "REGION: ", regionName: "ASIA PACIFIC (EN)",
       privacy: "Privacy Policy", terms: "Terms of Service", esg: "ESG Compliance"
@@ -311,9 +311,9 @@ export const dictionary = {
     },
     footer: {
       desc: "Membangun masa depan melalui inovasi dan konektivitas digital. Kami adalah mitra teknologi informasi terpercaya di Asia untuk mendukung transformasi digital bisnis Anda.",
-      col1: "Korporasi", c1_1: "Tentang Kami", c1_2: "Kepemimpinan", c1_3: "Karir", c1_4: "Hubungi Kami",
-      col2: "Solusi", c2_1: "Enterprise AI", c2_2: "Infrastruktur Cloud", c2_3: "Keamanan Siber", c2_4: "Sektor Industri",
-      col3: "Sumber Daya", c3_1: "Studi Kasus", c3_2: "Buku Putih", c3_3: "Dokumentasi API", c3_4: "Pusat Bantuan",
+      col1: "Perusahaan", c1_1: "Identitas", c1_2: "Jajaran Direksi", c1_3: "Karir", c1_4: "Inisiasi Akses",
+      col2: "Teknologi Inti", c2_1: "Enterprise AI", c2_2: "Cloud & Devops", c2_3: "Keamanan Siber", c2_4: "Big Data & BI",
+      col3: "Solusi Sektor", c3_1: "Finansial & Perbankan", c3_2: "Medis & Rumah Sakit", c3_3: "Pertahanan Militer", c3_4: "Pemerintah Nasional",
       col4: "Koneksi",
       region: "WILAYAH TERITORIAL: ", regionName: "ASIA PASIFIK (ID)",
       privacy: "Kebijakan Privasi", terms: "Ketentuan Layanan", esg: "Kepatuhan ESG"
