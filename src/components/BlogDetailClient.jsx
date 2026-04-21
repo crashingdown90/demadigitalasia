@@ -37,7 +37,7 @@ const formatContent = (contentString) => {
     // Inline parsing for standard paragraphs (Bold and Links)
     const parts = formattedLine.split(/(\*\*.*?\*\*|\[.*?\]\(.*?\))/g);
     return (
-      <p key={idx} className="mb-6 font-sans text-zinc-300 leading-loose text-[15px] md:text-[17px] max-w-4xl tracking-wide">
+      <p key={idx} className="mb-6 font-sans text-zinc-300 leading-loose text-[15px] md:text-[17px] tracking-wide">
         {parts.map((part, pIdx) => {
           if (part.startsWith('**') && part.endsWith('**')) {
             return <strong key={pIdx} className="text-white font-bold">{part.slice(2, -2)}</strong>;
@@ -63,14 +63,14 @@ export default function BlogDetailClient({ post, lang }) {
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,#1f2937_0%,transparent_50%)] opacity-20" />
 
       {/* Back Navigation */}
-      <div className="max-w-4xl w-full px-6 md:px-12 relative z-10 mb-12">
+      <div className="max-w-6xl w-full px-6 md:px-12 relative z-10 mb-12">
         <Link href={`/${lang}/blog`} className="inline-flex items-center gap-3 text-[10px] font-bold tracking-widest uppercase text-zinc-500 hover:text-white transition-colors group">
           <ArrowLeft size={16} className="group-hover:-translate-x-2 transition-transform" /> {t.backToList}
         </Link>
       </div>
 
       {/* Article Header */}
-      <header className="max-w-4xl w-full px-6 md:px-12 relative z-10 mb-20 border-b border-zinc-900 pb-16">
+      <header className="max-w-6xl w-full px-6 md:px-12 relative z-10 mb-20 border-b border-zinc-900 pb-16">
         
         <div className="flex flex-wrap items-center gap-6 mb-10 text-[9px] font-bold tracking-widest uppercase text-zinc-500">
            <span className="flex items-center gap-2 border border-zinc-800 px-3 py-1.5"><Hash size={12}/> {post.category[lang] || post.category.en}</span>
@@ -97,7 +97,7 @@ export default function BlogDetailClient({ post, lang }) {
       </header>
 
       {/* Article Content */}
-      <article className="max-w-4xl w-full px-6 md:px-12 relative z-10">
+      <article className="max-w-6xl w-full px-6 md:px-12 relative z-10">
         <motion.div
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}

@@ -6,6 +6,7 @@ import AIDetail from '../../../../components/AIDetail';
 import ConsultingDetail from '../../../../components/ConsultingDetail';
 import BigDataDetail from '../../../../components/BigDataDetail';
 import DefaultDetail from '../../../../components/DefaultDetail';
+import CloudDetail from '../../../../components/CloudDetail';
 
 export async function generateStaticParams() {
   return twelvePillars.map((pillar) => ({
@@ -77,6 +78,8 @@ export default async function PillarDetailPage({ params }) {
                  <ConsultingDetail pillar={pillar} lang={lang} />
               ) : pillar.id === 'big-data' ? (
                  <BigDataDetail pillar={pillar} lang={lang} />
+              ) : pillar.id === 'cloud' ? (
+                 <CloudDetail pillar={pillar} lang={lang} />
               ) : (
                  <DefaultDetail pillar={pillar} lang={lang} />
               )}
