@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
    const desc = post.excerpt[lang] || post.excerpt.en;
 
    return {
-      title: `${title} | DEMA DIGITAL ASIA Insights`,
+      title: `${title} | DEMA`,
       description: desc,
       alternates: {
          canonical: `/${lang}/blog/${slug}`,
@@ -37,6 +37,22 @@ export async function generateMetadata({ params }) {
       openGraph: {
          title: `${title} | DEMA`,
          description: desc,
+         url: `/${lang}/blog/${slug}`,
+         type: "article",
+         images: [
+            {
+               url: post.thumbnail,
+               width: 1200,
+               height: 630,
+               alt: title,
+            }
+         ]
+      },
+      twitter: {
+         card: "summary_large_image",
+         title: `${title} | DEMA`,
+         description: desc,
+         images: [post.thumbnail],
       }
    };
 }

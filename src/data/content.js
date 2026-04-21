@@ -1,12 +1,12 @@
 import { Lock, Server, Microchip, Zap, Ship, Flame, RadioTower, Crosshair } from 'lucide-react';
 
 export const navigationClusters = [
-  { label: { en: 'The Core', id: 'The Core' }, id: 'core' },
-  { label: { en: 'Neural Network', id: 'Jaringan Neural' }, id: 'neural-network' },
-  { label: { en: 'Sector Solutions', id: 'Solusi Sektor' }, id: 'sector-solutions' },
-  { label: { en: 'Intelligence Hub', id: 'Pusat Intelijen' }, id: 'intelligence-hub' },
-  { label: { en: 'Initiate Handshake', id: 'Inisiasi Akses' }, id: 'initiate-handshake' },
-  { label: { en: 'Insights', id: 'Wawasan' }, id: 'blog' }
+  { label: { en: 'About Us', id: 'Tentang Kami' }, id: 'core' },
+  { label: { en: 'Core Technology', id: 'Solusi Teknologi' }, id: 'neural-network' },
+  { label: { en: 'Industries', id: 'Sektor Industri' }, id: 'sector-solutions' },
+  { label: { en: 'Knowledge Hub', id: 'Pusat Informasi' }, id: 'intelligence-hub' },
+  { label: { en: 'Contact Us', id: 'Hubungi Kami' }, id: 'initiate-handshake' },
+  { label: { en: 'Insights', id: 'Blog & Wawasan' }, id: 'blog' }
 ];
 
 export const twelvePillars = [

@@ -13,13 +13,35 @@ const formatContent = (contentString) => {
     let formattedLine = line.trim();
     if (formattedLine === '') return <br key={idx} className="hidden" />; // Avoid multiple heavy brs
     
-    // Check for Image syntax: ![alt text](url)
+    // Check for Image syntax: ![alt text](url) or ![alt text | format](url)
     const imgMatch = formattedLine.match(/^!\[(.*?)\]\((.*?)\)$/);
     if (imgMatch) {
+      const altRaw = imgMatch[1];
+      const url = imgMatch[2];
+      
+      let format = 'landscape';
+      let cleanAlt = altRaw;
+      if (altRaw.includes('|')) {
+         const parts = altRaw.split('|');
+         cleanAlt = parts[0].trim();
+         format = parts[1].trim().toLowerCase();
+      }
+
+      let heightClass = "h-[300px] md:h-[450px]"; // default landscape
+      let widthClass = "w-full";
+      
+      if (format === 'square') {
+         heightClass = "h-[300px] md:h-[600px] lg:h-[800px]";
+         widthClass = "w-full md:w-[600px] lg:w-[800px] mx-auto";
+      } else if (format === 'portrait') {
+         heightClass = "h-[450px] md:h-[700px] lg:h-[900px]";
+         widthClass = "w-full md:w-[500px] lg:w-[650px] mx-auto";
+      }
+
       return (
-        <div key={idx} className="relative w-full h-[300px] md:h-[450px] my-10 rounded-xl overflow-hidden border border-zinc-800 group shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-           <Image src={imgMatch[2]} alt={imgMatch[1]} fill className="object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700" />
-           <div className="absolute bottom-4 left-6 text-[10px] text-zinc-300 font-bold uppercase tracking-widest bg-black/60 px-3 py-1 backdrop-blur border border-zinc-800/50 rounded">{imgMatch[1]}</div>
+        <div key={idx} className={`relative ${widthClass} ${heightClass} my-14 rounded-2xl overflow-hidden border border-zinc-800 group shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-zinc-950`}>
+           <Image src={url} alt={cleanAlt} fill className="object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700" />
+           <div className="absolute bottom-4 left-6 max-w-[80%] text-[10px] text-zinc-300 font-bold uppercase tracking-widest bg-black/80 px-4 py-2 backdrop-blur-md border border-zinc-800/50 rounded shadow-lg z-10">{cleanAlt}</div>
         </div>
       );
     }

@@ -50,46 +50,51 @@ export default function Footer() {
 
   return (
     <footer className="bg-black pt-24 md:pt-40 pb-12 md:pb-20 px-6 md:px-24 border-t border-zinc-900 text-white relative z-50">
-      <div className="grid grid-cols-2 md:grid-cols-6 gap-x-4 gap-y-12 md:gap-10 lg:gap-16 mb-20 md:mb-32 max-w-7xl mx-auto">
-        <div className="col-span-2 md:col-span-2 mb-4 md:mb-0">
-          <Link href={`/${lang}`} className="text-3xl font-black tracking-tighter mb-8 block">
-            DEMA<span className="font-light tracking-[0.3em] text-xs ml-3 opacity-60">DIGITAL ASIA</span>
+      <div className="flex flex-col lg:flex-row justify-between gap-y-16 lg:gap-x-12 xl:gap-x-16 mb-20 md:mb-32 max-w-7xl mx-auto">
+        {/* Left Side: Brand & Desc */}
+        <div className="w-full lg:w-1/3 xl:w-1/4">
+          <Link href={`/${lang}`} className="text-3xl font-black tracking-tighter mb-8 flex items-center">
+            DEMA<span className="font-light tracking-[0.3em] text-[10px] ml-3 opacity-60">DIGITAL ASIA</span>
           </Link>
-          <p className="text-xs text-zinc-500 font-mono uppercase leading-relaxed max-w-sm border-l border-zinc-800 pl-4 mt-6">
+          <p className="text-[11px] text-zinc-500 font-mono leading-relaxed border-l border-zinc-800 pl-4 mt-6 pr-4">
             {t.desc}
           </p>
         </div>
         
-        {colData.map((col, i) => (
-          <div key={i}>
-            <h4 className="text-[10px] font-bold tracking-[0.5em] uppercase text-zinc-400 mb-8 flex items-center gap-2">
-              <div className="w-1.5 h-1.5 bg-zinc-700 hidden sm:block" /> {col.title}
-            </h4>
-            <ul className="flex flex-col gap-3 md:gap-5 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-zinc-600">
-              {col.links.map(link => (
-                <li key={link.label}>
-                  {link.external ? (
-                    <a 
-                      href={link.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="hover:text-white transition-colors cursor-pointer uppercase block w-max"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link 
-                      href={link.url} 
-                      className="hover:text-white transition-colors cursor-pointer uppercase block"
-                    >
-                      {link.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {/* Right Side: Columns */}
+        <div className="w-full lg:w-2/3 xl:w-3/4 grid grid-cols-2 sm:grid-cols-4 gap-x-6 lg:gap-x-8 gap-y-12">
+          {colData.map((col, i) => (
+            <div key={i}>
+              <h4 className="text-[10px] xl:text-[11px] font-bold tracking-[0.3em] text-zinc-400 mb-8 flex items-start sm:items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-zinc-700 hidden sm:block opacity-50 shrink-0" /> 
+                <span className="leading-snug">{col.title}</span>
+              </h4>
+              <ul className="flex flex-col gap-4 text-[10px] sm:text-[11px] font-bold tracking-widest sm:tracking-[0.15em] text-zinc-600">
+                {col.links.map(link => (
+                  <li key={link.label}>
+                    {link.external ? (
+                      <a 
+                        href={link.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="hover:text-white transition-colors cursor-pointer inline-block"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link 
+                        href={link.url} 
+                        className="hover:text-white transition-colors cursor-pointer inline-block"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Footer Bottom Setup */}
