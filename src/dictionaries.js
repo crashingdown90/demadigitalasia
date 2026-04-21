@@ -15,7 +15,8 @@ export const dictionary = {
       menuEsg: "ESG Compliance",
       menuHQ: "Headquarters",
       menuHQAddr: "DEMA DIGITAL ASIA HOLDINGS.",
-      menuHQCity: "West Java, Indonesia."
+      menuHQCity: "West Java, Indonesia.",
+      menuBlog: "Insights & Newsroom"
     },
     hero: {
       systemStatus: "System Status: Optimal",
@@ -42,7 +43,7 @@ export const dictionary = {
       esg: { title: "ESG Governance", desc: "Focusing on Green Computing and responsible AI ethics as well as digital inclusivity." }
     },
     footer: {
-      desc: "Empowering the future through Intelligence & Connectivity. Asia's Premier Deep Tech Partner orchestrating resilient digital ecosystems.",
+      desc: "Building the future through digital innovation and connectivity. Your trusted IT partner in Asia for empowering enterprise digital transformation.",
       col1: "Company", c1_1: "About Us", c1_2: "Leadership", c1_3: "Careers", c1_4: "Contact Us",
       col2: "Solutions", c2_1: "Enterprise AI", c2_2: "Cloud Services", c2_3: "Cybersecurity", c2_4: "Industry Sectors",
       col3: "Resources", c3_1: "Case Studies", c3_2: "Whitepapers", c3_3: "API Docs", c3_4: "Help Center",
@@ -51,28 +52,28 @@ export const dictionary = {
       privacy: "Privacy Policy", terms: "Terms of Service", esg: "ESG Compliance"
     },
     handshake: {
-      heroTag: "Secure Gateway",
+      heroTag: "Contact Us",
       title1: "INITIATE",
-      title2: "HANDSHAKE.",
-      desc: "This encryption channel is strictly dedicated to state agencies and top-tier enterprises. The DEMA system will reject messages that do not meet our business protocol specifications.",
-      clearance: "Clearance Protocol",
-      clearanceDesc: "Only responding to requests with explicit technical scope and validated corporate identities.",
-      aes: "AES-256 Secured",
-      aesDesc: "All transmissions are encrypted on an absolute defense protocol layer (Zero Trust).",
-      tabBrief: "Secure Briefing",
-      tabAuth: "Client Auth",
-      formEntity: "Corporate Entity / State Agency",
-      formEmail: "Official Clearance Email",
-      formSector: "Target Sector",
-      formBudget: "Project Scale (Budget)",
-      formBrief: "Mission Brief (Encrypted Payload)",
-      formPlaceholder: "Explain the landscape of the problem to be solved...",
-      btnTransmit: "Transmit Protocol",
-      authRestrict: "RESTRICTED NODE",
-      authDesc: "Enter your Decryption Key and Root-level Access Token.",
-      btnAuth: "Authenticate",
-      sectorOptions: ["Financial & Banking", "Government & Defense", "Healthcare Systems", "Energy & Resources", "Cybersecurity Audit", "Other Deep Tech"],
-      budgetOptions: ["USD $100,000 - $500,000", "USD $500,000 - $1,000,000", "USD $1M - $5M", "High Scale (> USD $5M)"]
+      title2: "A PROJECT.",
+      desc: "Connect with our dedicated enterprise team to discuss your digital transformation needs. We strictly prioritize high-scale implementations for corporate and government agencies.",
+      clearance: "Project Qualification",
+      clearanceDesc: "Please provide a clear scope of your enterprise's challenges and technical requirements.",
+      aes: "Secure Communication",
+      aesDesc: "All submissions are protected under our strict corporate data privacy protocols.",
+      tabBrief: "Project Inquiry",
+      tabAuth: "Client Login",
+      formEntity: "Corporate Entity / Organization",
+      formEmail: "Corporate Email Address",
+      formSector: "Industry Sector",
+      formBudget: "Estimated Project Budget",
+      formBrief: "Project Requirements & Objectives",
+      formPlaceholder: "Please describe your current operational challenges and the specific solutions you are seeking...",
+      btnTransmit: "Submit Inquiry",
+      authRestrict: "CLIENT PORTAL",
+      authDesc: "Enter your secure Client ID and Password to access your dedicated project dashboard.",
+      btnAuth: "Secure Login",
+      sectorOptions: ["Financial & Banking", "Government & Public Sector", "Healthcare Systems", "Energy & Resources", "IT & Cybersecurity", "Other Industries"],
+      budgetOptions: ["USD $100,000 - $500,000", "USD $500,000 - $1,000,000", "USD $1M - $5M", "Above USD $5M"]
     },
     coreAbout: {
       manifestoTag: "Corporate Profile",
@@ -252,6 +253,17 @@ export const dictionary = {
       contactTitle: "Need Direct Assistance?",
       contactDesc: "Please reach out to our dedicated support team. We are fully committed to assisting with all your digital infrastructure consultation needs.",
       btnSub: "Contact Support Team"
+    },
+    blog: {
+      tag: "Strategic Updates",
+      title1: "INSIGHTS &",
+      title2: "NEWSROOM.",
+      desc: "Latest cybersecurity advisories, artificial intelligence breakthroughs, and strategic corporate movements from the DEMA enterprise network.",
+      readMore: "Read Directive",
+      published: "PUBLISHED ON",
+      author: "AUTHOR / NODE",
+      category: "CLASSIFICATION",
+      backToList: "Return to Console"
     }
   },
   id: {
@@ -270,7 +282,8 @@ export const dictionary = {
       menuEsg: "Kepatuhan ESG",
       menuHQ: "Kantor Pusat",
       menuHQAddr: "DEMA DIGITAL ASIA HOLDINGS.",
-      menuHQCity: "Jawa Barat, Indonesia."
+      menuHQCity: "Jawa Barat, Indonesia.",
+      menuBlog: "Wawasan & Berita"
     },
     hero: {
       systemStatus: "Status Operasional: Aktif",
@@ -297,7 +310,7 @@ export const dictionary = {
       esg: { title: "Tata Kelola ESG", desc: "Fokus pada Green Computing (optimasi algoritma hemat energi) dan etika AI yang bertanggung jawab serta inklusi digital." }
     },
     footer: {
-      desc: "Memberdayakan masa depan melalui Intelijen & Konektivitas. Mitra Deep Tech B2B Utama Asia yang mengorkestrasi ekosistem digital.",
+      desc: "Membangun masa depan melalui inovasi dan konektivitas digital. Kami adalah mitra teknologi informasi terpercaya di Asia untuk mendukung transformasi digital bisnis Anda.",
       col1: "Korporasi", c1_1: "Tentang Kami", c1_2: "Kepemimpinan", c1_3: "Karir", c1_4: "Hubungi Kami",
       col2: "Solusi", c2_1: "Enterprise AI", c2_2: "Infrastruktur Cloud", c2_3: "Keamanan Siber", c2_4: "Sektor Industri",
       col3: "Sumber Daya", c3_1: "Studi Kasus", c3_2: "Buku Putih", c3_3: "Dokumentasi API", c3_4: "Pusat Bantuan",
@@ -306,28 +319,28 @@ export const dictionary = {
       privacy: "Kebijakan Privasi", terms: "Ketentuan Layanan", esg: "Kepatuhan ESG"
     },
     handshake: {
-      heroTag: "Gerbang Enkripsi",
-      title1: "INISIASI",
-      title2: "AKSES.",
-      desc: "Jalur enkripsi ini didedikasikan secara mutlak untuk institusi negara dan enterprise skala atas. Sistem DEMA akan menolak pesan yang tidak memenuhi standar protokol operasi kami.",
-      clearance: "Protokol Verifikasi",
-      clearanceDesc: "Hanya menanggapi permintaan dengan kejelasan skop teknis dan identitas korporat yang tervalidasi.",
-      aes: "Enkripsi AES-256",
-      aesDesc: "Semua transmisi diverifikasi pada layer protokol pertahanan mutlak (Zero Trust Protocol).",
-      tabBrief: "Briefing Operasi",
-      tabAuth: "Otentikasi Root",
-      formEntity: "Entitas Korporasi / Instansi Negara",
-      formEmail: "Email Penugasan Resmi",
-      formSector: "Sektor Industri / Pilar",
-      formBudget: "Skala Operasi (Anggaran)",
-      formBrief: "Briefing Misi (Muatan Enkripsi)",
-      formPlaceholder: "Ketik parameter objektif penyelesaian yang Anda butuhkan secara terperinci...",
-      btnTransmit: "Transmisikan Protokol",
-      authRestrict: "SIMPUL SERVER TERTUTUP",
-      authDesc: "Masukkan Private Key dan Token Akses Root milik Anda untuk membuka terminal pangkalan data.",
-      btnAuth: "Autentikasi Modul",
-      sectorOptions: ["Finansial & Perbankan", "Pemerintahan & Pertahanan", "Sistem Kesehatan", "Energi & Sumber Daya", "Audit Keamanan Siber", "Deep Tech Lainnya"],
-      budgetOptions: ["USD $100.000 - $500.000", "USD $500.000 - $1.000.000", "USD $1 Juta - $5 Juta", "Skala Besar (> USD $5 Juta)"]
+      heroTag: "Hubungi Kami",
+      title1: "KONSULTASI",
+      title2: "PROYEK.",
+      desc: "Diskusikan kebutuhan transformasi digital Anda dengan tim eksekutif kami. Kami berdedikasi melayani implementasi teknologi skala besar untuk perusahaan dan instansi pemerintah.",
+      clearance: "Kualifikasi Proyek",
+      clearanceDesc: "Mohon sediakan gambaran yang jelas mengenai tantangan strategis dan kebutuhan infrastruktur Anda.",
+      aes: "Komunikasi Aman",
+      aesDesc: "Seluruh informasi yang Anda kirimkan dilindungi penuh oleh protokol privasi data korporasi (NDA) kami.",
+      tabBrief: "Formulir Konsultasi",
+      tabAuth: "Login Klien",
+      formEntity: "Nama Perusahaan / Instansi",
+      formEmail: "Alamat Email Perusahaan",
+      formSector: "Sektor Industri",
+      formBudget: "Estimasi Anggaran Proyek",
+      formBrief: "Deskripsi Kebutuhan & Objektif",
+      formPlaceholder: "Jelaskan masalah operasional yang sedang Anda hadapi dan solusi digital seperti apa yang diharapkan...",
+      btnTransmit: "Kirim Permintaan",
+      authRestrict: "PORTAL KLIEN",
+      authDesc: "Masukkan Client ID dan Kata Sandi untuk mengakses dashboard manajemen proyek khusus milik institusi Anda.",
+      btnAuth: "Masuk Portal",
+      sectorOptions: ["Finansial & Perbankan", "Pemerintahan & Sektor Publik", "Sistem Layanan Kesehatan", "Energi & Sumber Daya", "Keamanan Siber & IT", "Industri Lainnya"],
+      budgetOptions: ["USD $100.000 - $500.000", "USD $500.000 - $1.000.000", "USD $1 Juta - $5 Juta", "Di Atas USD $5 Juta"]
     },
     coreAbout: {
       manifestoTag: "Profil Perusahaan",
@@ -537,6 +550,17 @@ export const dictionary = {
       contactTitle: "Butuh Bantuan Langsung?",
       contactDesc: "Silakan hubungi tim representatif kami. Kami berkomitmen untuk mendampingi Anda menjawab setiap keperluan bisnis dan transformasi teknologi.",
       btnSub: "Hubungi Tim Dukungan"
+    },
+    blog: {
+      tag: "Pembaruan Strategis",
+      title1: "WAWASAN &",
+      title2: "BERITA.",
+      desc: "Laporan terkini mengenai keamanan siber, terobosan kecerdasan buatan, pergerakan korporasi strategis dalam ekosistem perusahaan DEMA.",
+      readMore: "Baca Direktif",
+      published: "DIPUBLIKASIKAN PADA",
+      author: "OTORITAS / PENULIS",
+      category: "KLASIFIKASI",
+      backToList: "Kembali ke Konsol"
     }
   }
 };

@@ -1,7 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 import { CheckCircle2 } from 'lucide-react';
 
 export default function DefaultDetail({ pillar, lang = 'en' }) {
   const statsArray = Array.isArray(pillar.stats) ? pillar.stats : (pillar.stats?.[lang] || pillar.stats?.en || []);
+  const titleText = typeof pillar.title === 'string' ? pillar.title : (pillar.title?.[lang] || pillar.title?.en || '');
 
   return (
     <div className="animate-in fade-in duration-1000 slide-in-from-bottom-10">
@@ -23,7 +25,7 @@ export default function DefaultDetail({ pillar, lang = 'en' }) {
                <div>
                   <h3 className="text-[10px] font-bold tracking-[0.3em] text-white uppercase mb-4">Enterprise Integration</h3>
                   <p className="text-[11px] text-zinc-500 leading-loose font-mono mb-8">
-                     Arsitektur <span className="text-zinc-300 font-bold">{pillar.title}</span> murni direkayasa untuk skalabilitas level state. Kami menyediakan container Docker & Gateway isolasi untuk injeksi mulus ke dalam lingkungan legacy Anda.
+                     Arsitektur <span className="text-zinc-300 font-bold">{titleText}</span> murni direkayasa untuk skalabilitas level state. Kami menyediakan container Docker & Gateway isolasi untuk injeksi mulus ke dalam lingkungan legacy Anda.
                   </p>
                </div>
                <button className="w-full py-4 bg-white text-black font-bold uppercase text-[10px] tracking-widest hover:bg-zinc-200 transition-colors">
@@ -48,7 +50,7 @@ export default function DefaultDetail({ pillar, lang = 'en' }) {
                     <div className="border-l border-emerald-900 pl-6 relative">
                        <div className="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
                        <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">Phase 2: Active Deployment</h4>
-                       <p className="text-[11px] font-mono text-zinc-500 leading-relaxed">Instalasi parameter analitik {pillar.title} ke dalam server Edge atau Private Cloud Anda secara terenkripsi mutlak.</p>
+                       <p className="text-[11px] font-mono text-zinc-500 leading-relaxed">Instalasi parameter analitik {titleText} ke dalam server Edge atau Private Cloud Anda secara terenkripsi mutlak.</p>
                     </div>
                     <div className="border-l border-zinc-800 pl-6 relative">
                        <div className="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-zinc-600" />
@@ -73,7 +75,7 @@ export default function DefaultDetail({ pillar, lang = 'en' }) {
                     </div>
                     <div className="text-blue-400 mt-6 font-bold">{">>"} STATUS 200 OK</div>
                     <div className="text-zinc-400 mt-2">{">>"} Handshake verified. </div>
-                    <div className="text-zinc-400 mt-2">{">>"} Module [<span className="text-white">{pillar.title}</span>] mounted successfully.</div>
+                    <div className="text-zinc-400 mt-2">{">>"} Module [<span className="text-white">{titleText}</span>] mounted successfully.</div>
                     <div className="text-zinc-400 mt-2">{">>"} Waiting for command payload execution...</div>
                     <div className="mt-4 text-emerald-500 animate-pulse font-black text-lg">_</div>
                  </div>

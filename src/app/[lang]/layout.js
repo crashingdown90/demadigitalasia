@@ -4,6 +4,17 @@ import Footer from "../../components/Footer";
 import ScrollProgress from "../../components/ScrollProgress";
 import "../globals.css";
 
+const NoiseOverlay = () => (
+  <div className="pointer-events-none fixed inset-0 z-[100] h-full w-full opacity-[0.04] mix-blend-screen bg-noise" />
+);
+
+const AmbientGlow = () => (
+  <>
+    <div className="pointer-events-none fixed -top-[20%] -left-[10%] w-[50vw] h-[50vw] rounded-full bg-emerald-900/10 blur-[130px] mix-blend-screen z-0" />
+    <div className="pointer-events-none fixed -bottom-[20%] -right-[10%] w-[60vw] h-[60vw] rounded-full bg-cyan-900/5 blur-[150px] mix-blend-screen z-0" />
+  </>
+);
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -16,38 +27,50 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  metadataBase: new URL("https://demadigital.asia"),
-  title: "DEMA DIGITAL ASIA | Enterprise Deep Tech",
-  description: "Asia's Premier End-to-End Digital Transformation & Deep Tech Partner. Building the architecture of tomorrow through AI, IoT, & Zero Trust Frameworks.",
-  keywords: ["B2B", "Enterprise AI", "Deep Tech", "Data Sovereignty", "Digital Transformation", "Next.js"],
-  openGraph: {
-    title: "DEMA DIGITAL ASIA",
-    description: "The neural orchestrator of Asia's digital economy.",
-    url: "https://demadigital.asia",
-    siteName: "DEMA",
-    images: [
-      {
-        url: "/bg_main_1776588187527.png", 
-        width: 1200,
-        height: 630,
-        alt: "DEMA Digital Asia Satellite Orbit Component",
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const lang = resolvedParams?.lang || 'id';
+
+  return {
+    metadataBase: new URL("https://demadigital.asia"),
+    title: "DEMA DIGITAL ASIA | Enterprise Deep Tech",
+    description: "Asia's Premier End-to-End Digital Transformation & Deep Tech Partner. Building the architecture of tomorrow through AI, IoT, & Zero Trust Frameworks.",
+    keywords: ["B2B", "Enterprise AI", "Deep Tech", "Data Sovereignty", "Digital Transformation", "Next.js"],
+    alternates: {
+      canonical: `/${lang}`,
+      languages: {
+        'en': '/en',
+        'id': '/id',
       },
-    ],
-    locale: "id_ID",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "DEMA DIGITAL ASIA",
-    description: "Asia's Preeminent Deep Tech Orchestrator.",
-    images: ["/bg_main_1776588187527.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  }
-};
+    },
+    openGraph: {
+      title: "DEMA DIGITAL ASIA",
+      description: "The neural orchestrator of Asia's digital economy.",
+      url: "https://demadigital.asia",
+      siteName: "DEMA",
+      images: [
+        {
+          url: "/bg_main_1776588187527.png", 
+          width: 1200,
+          height: 630,
+          alt: "DEMA Digital Asia Satellite Orbit Component",
+        },
+      ],
+      locale: lang === 'en' ? "en_US" : "id_ID",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "DEMA DIGITAL ASIA",
+      description: "Asia's Preeminent Deep Tech Orchestrator.",
+      images: ["/bg_main_1776588187527.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    }
+  };
+}
 
 export default async function RootLayout({ children, params }) {
   const resolvedParams = await params;
@@ -79,6 +102,8 @@ export default async function RootLayout({ children, params }) {
         />
       </head>
       <body className={`${inter.className} relative overflow-x-hidden bg-[#000] text-white font-sans selection:bg-white selection:text-black`}>
+        <NoiseOverlay />
+        <AmbientGlow />
         <ScrollProgress />
         <Navbar />
         <main className="min-h-screen">

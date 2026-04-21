@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { CheckCircle2, AlertTriangle, Zap, Activity } from 'lucide-react';
 
 export default function AIDetail({ pillar, lang = 'en' }) {

@@ -26,20 +26,6 @@ const iconMap = {
 const HologramTopology = ({ index, color, tag, icon: Icon }) => {
   const type = index % 4;
 
-  const CenterHUD = () => (
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-50">
-      <div className="relative w-40 h-40 flex flex-col items-center justify-center animate-pulse">
-        <svg className="absolute w-full h-full opacity-30 animate-spin-slow" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="48" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="2 4" />
-          <path d="M50 0 L50 10 M50 90 L50 100 M0 50 L10 50 M90 50 L100 50" stroke="white" strokeWidth="1" />
-        </svg>
-        <div className="absolute inset-2 bg-black/80 backdrop-blur-md rounded-full border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.1)_inset] flex items-center justify-center z-10">
-          {Icon && <Icon size={40} strokeWidth={1} className="text-white opacity-90 drop-shadow-[0_0_10px_white]" />}
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <div className="hidden md:flex justify-center items-center relative h-[500px] w-full">
       {/* Dynamic Core Energy */}
@@ -143,7 +129,17 @@ const HologramTopology = ({ index, color, tag, icon: Icon }) => {
         </svg>
       )}
 
-      <CenterHUD />
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-50">
+        <div className="relative w-40 h-40 flex flex-col items-center justify-center animate-pulse">
+          <svg className="absolute w-full h-full opacity-30 animate-spin-slow" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="48" fill="none" stroke="white" strokeWidth="0.5" strokeDasharray="2 4" />
+            <path d="M50 0 L50 10 M50 90 L50 100 M0 50 L10 50 M90 50 L100 50" stroke="white" strokeWidth="1" />
+          </svg>
+          <div className="absolute inset-2 bg-black/80 backdrop-blur-md rounded-full border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.1)_inset] flex items-center justify-center z-10">
+            {Icon && <Icon size={40} strokeWidth={1} className="text-white opacity-90 drop-shadow-[0_0_10px_white]" />}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

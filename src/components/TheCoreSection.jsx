@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { Eye, Crosshair, Users, Leaf, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { dictionary } from '../dictionaries';
 
@@ -114,7 +115,9 @@ export default function TheCoreSection() {
                className="aspect-[3/2] border border-zinc-900 bg-zinc-950 flex items-center justify-center grayscale opacity-60 hover:opacity-100 hover:grayscale-0 hover:border-zinc-700 transition-all duration-300 cursor-pointer group p-6"
              >
                 {partner.logo ? (
-                  <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <div className="relative w-full h-full">
+                    <Image src={partner.logo} alt={partner.name} fill className="object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+                  </div>
                 ) : (
                   <span className="text-[10px] font-bold uppercase text-zinc-700 tracking-widest group-hover:text-zinc-400 transition-colors">
                     {partner.name}

@@ -33,6 +33,7 @@ export default function Navbar() {
             <li><Link href={`/${lang}/sector-solutions`} className="text-zinc-400 hover:text-white uppercase tracking-widest text-[9px] font-bold transition-colors">{t.sectorSolutions}</Link></li>
             <li><Link href={`/${lang}/neural-network`} className="text-zinc-400 hover:text-white uppercase tracking-widest text-[9px] font-bold transition-colors">{t.servicesDirectory}</Link></li>
             <li><Link href={`/${lang}/core`} className="text-zinc-400 hover:text-white uppercase tracking-widest text-[9px] font-bold transition-colors">{t.corpProfile}</Link></li>
+            <li><Link href={`/${lang}/blog`} className="text-zinc-400 hover:text-white uppercase tracking-widest text-[9px] font-bold transition-colors">{t.menuBlog}</Link></li>
           </ul>
         </div>
 

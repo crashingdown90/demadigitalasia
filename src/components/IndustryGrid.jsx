@@ -4,16 +4,14 @@ import { industryVerticals } from '../data/content';
 import { LayoutGrid, Activity, Shield, Clock } from 'lucide-react';
 import { useParams } from 'next/navigation';
 import { dictionary } from '../dictionaries';
-import SectorSlideModal from './SectorSlideModal';
-import { useState } from 'react';
+import SpotlightCard from './SpotlightCard';
+import Link from 'next/link';
 
 export default function IndustryGrid() {
   const params = useParams();
   const lang = params?.lang || 'en';
   const t = dictionary[lang]?.industryGrid || dictionary.en.industryGrid;
   const m = dictionary[lang]?.industryMetrics || dictionary.en.industryMetrics;
-  
-  const [selectedSector, setSelectedSector] = useState(null);
   
   return (
     <section id="sector-solutions" className="bg-black pt-48 pb-32 px-6 md:px-24 border-y border-zinc-900 text-white min-h-screen relative overflow-hidden font-sans">
@@ -59,10 +57,11 @@ export default function IndustryGrid() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              onClick={() => setSelectedSector(v)}
-              className="bg-zinc-950 border border-zinc-900 overflow-hidden relative group transition-all duration-300 hover:border-zinc-500 cursor-pointer"
+              className="relative h-full"
             >
-              <div className="p-8 relative z-20 h-full flex flex-col justify-between">
+              <Link href={`/${lang}/sector-solutions/${v.id}`} className="block h-full">
+                <SpotlightCard className="h-full bg-zinc-950 border border-zinc-900 rounded-none overflow-hidden relative group transition-all duration-300 hover:border-zinc-500 cursor-pointer">
+                <div className="p-8 relative z-20 h-full flex flex-col justify-between">
                 <div>
                   <div className="flex justify-between items-start mb-6">
                     <div className="text-zinc-500 group-hover:text-white transition-colors duration-300">
@@ -103,17 +102,12 @@ export default function IndustryGrid() {
                     </div>
                 </div>
               </div>
+                </SpotlightCard>
+              </Link>
             </motion.div>
           ))}
         </div>
       </div>
-
-      <SectorSlideModal 
-        isOpen={!!selectedSector} 
-        onClose={() => setSelectedSector(null)} 
-        sector={selectedSector} 
-        lang={lang} 
-      />
     </section>
   );
 }

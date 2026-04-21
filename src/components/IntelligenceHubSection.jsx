@@ -1,6 +1,7 @@
 "use client";
 import { ArrowUpRight, BookOpen, Key, Cuboid } from 'lucide-react';
 import { useParams } from 'next/navigation';
+import Link from 'next/link';
 import { dictionary } from '../dictionaries';
 
 export default function IntelligenceHubSection() {
@@ -29,7 +30,7 @@ export default function IntelligenceHubSection() {
         
         <div className="md:w-2/3 flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {resources.map((res, i) => (
-            <div key={i} className="min-w-[85vw] md:min-w-0 shrink-0 snap-center group p-8 border border-zinc-800 bg-black hover:bg-zinc-900 transition-colors cursor-pointer relative overflow-hidden">
+            <Link key={i} href="#" onClick={(e) => { e.preventDefault(); alert("Dokumen teknis sedang dalam tahap penyusunan dan sinkronisasi server."); }} className="block min-w-[85vw] md:min-w-0 shrink-0 snap-center group p-8 border border-zinc-800 bg-black hover:bg-zinc-900 transition-colors cursor-pointer relative overflow-hidden">
               {res.icon}
               <span className="text-[9px] font-bold tracking-[0.3em] text-zinc-600 block mb-2">{res.type}</span>
               <span className="text-lg font-bold uppercase tracking-widest mb-4 block leading-tight">{res.title}</span>
@@ -38,7 +39,7 @@ export default function IntelligenceHubSection() {
               <div className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-zinc-600 group-hover:text-white transition-colors">
                 {t.explore} <ArrowUpRight size={14} />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

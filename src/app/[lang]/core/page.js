@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef } from 'react';
+import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ShieldCheck, Eye, Crosshair, Hexagon, Terminal, Activity } from 'lucide-react';
 import { useParams } from 'next/navigation';
@@ -170,7 +171,9 @@ export default function CorePage() {
                className="aspect-[3/2] border border-zinc-900 bg-zinc-950 flex items-center justify-center grayscale opacity-60 hover:opacity-100 hover:grayscale-0 hover:border-zinc-700 transition-all duration-300 cursor-pointer group p-6"
              >
                 {partner.logo ? (
-                  <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <div className="relative w-full h-full">
+                    <Image src={partner.logo} alt={partner.name} fill className="object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+                  </div>
                 ) : (
                   <span className="text-[10px] font-bold uppercase text-zinc-700 tracking-widest group-hover:text-zinc-400 transition-colors">
                     {partner.name}
