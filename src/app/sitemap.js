@@ -1,4 +1,5 @@
 import { twelvePillars, industryVerticals } from '../data/content';
+import { blogPosts } from '../data/blog';
 
 export default function sitemap() {
   const baseUrl = 'https://demadigital.asia';
@@ -12,7 +13,7 @@ export default function sitemap() {
   });
 
   // Fundamental Pages
-  const routes = ['', '/careers', '/initiate-handshake', '/neural-network'].map(
+  const routes = ['', '/careers', '/initiate-handshake', '/neural-network', '/blog'].map(
     (route) => ({
       url: `${baseUrl}/id${route}`, // Default canonical to 'id'
       lastModified: new Date().toISOString(),
@@ -40,5 +41,14 @@ export default function sitemap() {
     alternates: getAlternates(`/sector-solutions/${sector.id}`)
   }));
 
-  return [...routes, ...pillars, ...sectors];
+  // Dynamic Blog Articles
+  const articles = blogPosts.map((post) => ({
+    url: `${baseUrl}/id/blog/${post.slug}`,
+    lastModified: new Date(post.date).toISOString(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+    alternates: getAlternates(`/blog/${post.slug}`)
+  }));
+
+  return [...routes, ...pillars, ...sectors, ...articles];
 }
