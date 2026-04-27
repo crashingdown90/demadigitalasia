@@ -69,21 +69,29 @@ export default function BlogListClient({ blogPosts, lang }) {
           </div>
         </div>
 
-        {/* Category Pills */}
-        <div className="flex flex-wrap gap-3 mt-12 pt-8 border-t border-zinc-900">
-           {categories.map((cat, idx) => (
-             <button
-                key={idx}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 text-[10px] font-bold tracking-widest uppercase transition-all duration-300 border ${
-                   activeCategory === cat 
-                   ? 'bg-emerald-950/30 border-emerald-500 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.2)]' 
-                   : 'bg-transparent border-zinc-800 text-zinc-500 hover:text-white hover:border-zinc-600'
-                }`}
-             >
-                {cat}
-             </button>
-           ))}
+        {/* Category Dropdown */}
+        <div className="mt-12 pt-8 border-t border-zinc-900 flex items-center gap-4">
+           <span className="text-[10px] font-bold tracking-widest text-zinc-500 uppercase hidden md:block">
+              {lang === 'id' ? 'Saring Berdasarkan Kategori:' : 'Filter by Category:'}
+           </span>
+           <div className="relative w-full md:w-72 group">
+              <select
+                 value={activeCategory}
+                 onChange={(e) => setActiveCategory(e.target.value)}
+                 className="appearance-none w-full bg-zinc-950/50 border border-zinc-800 hover:border-zinc-600 text-emerald-500 font-mono tracking-widest uppercase text-xs py-4 pl-6 pr-12 rounded-none focus:outline-none focus:border-emerald-500 cursor-pointer transition-all"
+              >
+                 {categories.map((cat, idx) => (
+                    <option key={idx} value={cat} className="bg-black text-zinc-300 py-2">
+                       {cat}
+                    </option>
+                 ))}
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-emerald-500 group-hover:text-emerald-400 transition-colors">
+                 <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                 </svg>
+              </div>
+           </div>
         </div>
       </section>
 
