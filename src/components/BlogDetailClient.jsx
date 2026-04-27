@@ -118,25 +118,59 @@ export default function BlogDetailClient({ post, lang }) {
         </motion.div>
       </header>
 
-      {/* Article Content */}
-      <article className="max-w-6xl w-full px-6 md:px-12 relative z-10">
-        <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ delay: 0.3, duration: 0.8 }}
-        >
-          {/* Excerpt emphasis */}
-          <div className="pl-6 border-l-2 border-emerald-900 mb-16 bg-gradient-to-r from-emerald-900/10 to-transparent p-6 rounded-r-xl">
-            <p className="text-lg md:text-xl font-sans text-zinc-300 leading-relaxed italic">
-              {post.excerpt[lang] || post.excerpt.en}
-            </p>
-          </div>
+      {/* Article Content & AdSense Sidebar Layout */}
+      <div className="max-w-6xl w-full px-6 md:px-12 relative z-10 flex flex-col lg:flex-row gap-12 lg:gap-16">
+        
+        {/* Main Content */}
+        <article className="flex-1 w-full lg:max-w-[70%]">
+          <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ delay: 0.3, duration: 0.8 }}
+          >
+            {/* Excerpt emphasis */}
+            <div className="pl-6 border-l-2 border-emerald-900 mb-12 bg-gradient-to-r from-emerald-900/10 to-transparent p-6 rounded-r-xl">
+              <p className="text-lg md:text-xl font-sans text-zinc-300 leading-relaxed italic">
+                {post.excerpt[lang] || post.excerpt.en}
+              </p>
+            </div>
 
-          <div className="prose prose-invert prose-zinc max-w-none">
-             {formatContent(post.content[lang] || post.content.en)}
+            {/* In-Article Ad Slot (Top) */}
+            <div className="w-full bg-zinc-900/30 border border-zinc-800 border-dashed rounded flex flex-col items-center justify-center p-6 mb-12 min-h-[120px] text-zinc-600 font-mono text-[10px] uppercase tracking-widest relative overflow-hidden group">
+               <span className="relative z-10">Advertisement (In-Article Top)</span>
+            </div>
+
+            <div className="prose prose-invert prose-zinc max-w-none">
+               {formatContent(post.content[lang] || post.content.en)}
+            </div>
+
+            {/* In-Article Ad Slot (Bottom) */}
+            <div className="w-full bg-zinc-900/30 border border-zinc-800 border-dashed rounded flex flex-col items-center justify-center p-6 mt-16 min-h-[250px] text-zinc-600 font-mono text-[10px] uppercase tracking-widest relative overflow-hidden group">
+               <span className="relative z-10">Advertisement (In-Article Bottom)</span>
+            </div>
+          </motion.div>
+        </article>
+
+        {/* Sticky Sidebar for AdSense */}
+        <aside className="w-full lg:w-[30%] lg:sticky lg:top-32 h-fit hidden lg:block">
+          <div className="space-y-8">
+            {/* Vertical Ad Slot 1 (High CPC) */}
+            <div className="w-full bg-zinc-900/30 border border-zinc-800/80 border-dashed rounded flex flex-col items-center justify-center p-6 h-[600px] text-zinc-600 font-mono text-[10px] uppercase tracking-widest relative overflow-hidden shadow-2xl">
+              <span className="relative z-10 text-center leading-relaxed">Advertisement<br/>(Sticky Sidebar 300x600)</span>
+            </div>
+
+            {/* Related/Sponsored Slot */}
+            <div className="w-full bg-zinc-900/30 border border-zinc-800/80 border-dashed rounded flex flex-col items-center justify-center p-6 h-[250px] text-zinc-600 font-mono text-[10px] uppercase tracking-widest relative overflow-hidden">
+               <span className="relative z-10 text-center leading-relaxed">Advertisement<br/>(Sponsored Widget)</span>
+            </div>
           </div>
-        </motion.div>
-      </article>
+        </aside>
+      </div>
+
+      {/* Mobile Anchor Ad (Fixed to Bottom) */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-zinc-950 border-t border-zinc-800 h-[70px] flex items-center justify-center text-zinc-600 font-mono text-[10px] uppercase tracking-widest shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
+         <span>Advertisement (Mobile Anchor Ad)</span>
+      </div>
 
     </main>
   );
