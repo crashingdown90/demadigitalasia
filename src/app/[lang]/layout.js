@@ -1,4 +1,5 @@
 import { Inter, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ScrollProgress from "../../components/ScrollProgress";
@@ -68,6 +69,9 @@ export async function generateMetadata({ params }) {
     robots: {
       index: true,
       follow: true,
+    },
+    other: {
+      "google-adsense-account": "ca-pub-9806436984867634"
     }
   };
 }
@@ -96,6 +100,12 @@ export default async function RootLayout({ children, params }) {
   return (
     <html lang={lang} className={`${inter.variable} ${geistMono.variable}`}>
       <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9806436984867634"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
