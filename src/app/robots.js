@@ -5,6 +5,6 @@ export default function robots() {
       allow: '/',
       disallow: ['/private/'],
     },
-    sitemap: 'https://demadigital.asia/sitemap.xml',
+    sitemap: 'https://demadigitalasia.com/sitemap.xml',
   }
 }

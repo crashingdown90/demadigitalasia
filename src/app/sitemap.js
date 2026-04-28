@@ -2,7 +2,7 @@ import { twelvePillars, industryVerticals } from '../data/content';
 import { blogPosts } from '../data/blog';
 
 export default function sitemap() {
-  const baseUrl = 'https://demadigital.asia';
+  const baseUrl = 'https://demadigitalasia.com';
   
   // Custom helper to generate alternates block
   const getAlternates = (route) => ({
